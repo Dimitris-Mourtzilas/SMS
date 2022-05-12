@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title%}
+    <head>
+        <meta charset="UTF-8">
+        <title>Admin login</title>
+    </head>
+{% endblock %}
+
+{% block body %}
+<form class="admin-login-form">
+    <label for="adminName">
+        Admin name
+    </label>
+    <input type="text" name="admin-name" id="adminName" placeholder="Admin name" required>
+
+    <label for="adminPassword">
+        Admin password
+    </label>
+    <input type="password" name="admin-password" id="adminPassword" placeholder="Admin password" required>
+    <button type="submit">Login</button>
+
+    <span class="new-register-info">New here?</span>
+    <a href="{{path('admin_register')}}">Register</a>
+</form>
+
+{% endblock %}

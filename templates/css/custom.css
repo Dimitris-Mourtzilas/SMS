@@ -1,5 +1,22 @@
 
 
-.form-admin{
-    background-color: red;
+.admin-personal-info-submenu{
+    visibility: hidden;
 }
+
+.admin-personal-info-submenu  > ul >li{
+    list-style-type: none;
+    display:block;
+    background-color:white;
+}
+
+.btn-primary{
+    border: 1px groove blue;
+    border-radius:5px;
+    background-color:blue;
+    color:white;
+}
+
+
+
+

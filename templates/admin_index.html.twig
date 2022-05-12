@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="admin-main-div">
+
+    <div class="admin-personal-info-div">
+        <img src="" alt="user-icon" class="admin-personal-info-icon">
+        <div class="admin-personal-info-submenu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="entities-details">
+        <ul>
+            <li><a href="#">Students</a></li>
+            <li><a href="#">Professors</a></li>
+            <li><a href="#">Courses</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+{% endblock %}

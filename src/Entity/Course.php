@@ -35,20 +35,15 @@ class Course
     private $semester;
 
     /**
-     * @ORM\OneToMany(targetEntity=Professor::class, mappedBy="course")
+     * @ORM\ManyToOne(targetEntity=Professor::class, inversedBy="course")
      */
-    private $professors;
+    private $professor;
 
     /**
      * @ORM\ManyToMany(targetEntity=Enrolled::class, mappedBy="courses")
      */
     private $enrolleds;
 
-    public function __construct()
-    {
-        $this->professors = new ArrayCollection();
-        $this->enrolleds = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -91,36 +86,10 @@ class Course
         return $this;
     }
 
-    /**
-     * @return Collection<int, Professor>
-     */
-    public function getProfessors(): Collection
-    {
-        return $this->professors;
+
+    public function setProfessor(Professor $professor):self{
+        $this->professor = $professor;
     }
-
-    public function addProfessor(Professor $professor): self
-    {
-        if (!$this->professors->contains($professor)) {
-            $this->professors[] = $professor;
-            $professor->setCourse($this);
-        }
-
-        return $this;
-    }
-
-    public function removeProfessor(Professor $professor): self
-    {
-        if ($this->professors->removeElement($professor)) {
-            // set the owning side to null (unless already changed)
-            if ($professor->getCourse() === $this) {
-                $professor->setCourse(null);
-            }
-        }
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Enrolled>
      */
@@ -128,6 +97,14 @@ class Course
     {
         return $this->enrolleds;
     }
+
+    /**
+     * @return Professor
+     */
+    public function getProfessor():Professor{
+        return $this->professor;
+    }
+
 
     public function addEnrolled(Enrolled $enrolled): self
     {

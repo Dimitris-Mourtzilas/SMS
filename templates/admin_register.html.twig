@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <form class="admin-register-form">
+        <label for="adminFirstName">
+            First name
+        </label>
+        <input type="text" name="first-name" id="adminFirstName" placeholder="First name" required>
+
+        <label for="adminLastName">
+            Last name
+        </label>
+        <input type="text" name="last-name" id="adminLastName" placeholder="Last name" required>
+
+        <label for="adminNickName">
+            Nick name
+        </label>
+        <input type="text" name="nick-name" id="adminNickName" placeholder="Nick name" required>
+
+        <label for="adminPassword">
+            Password
+        </label>
+        <input type="password" name="password" id="adminPassword" placeholder="Password" required>
+
+        <label for="adminConfirmPassword">
+            Confirm Password
+        </label>
+        <input type="password" name="password" id="adminConfirmPassword" placeholder="Confirm Password" required>
+        <button type="submit" class="btn-primary">Register</button>
+    </form>
+
+{% endblock %}
